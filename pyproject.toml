@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vision-accessibility-demos"
+version = "0.1.0"
+description = "OpenCV prototypes for detection, preprocessing, and video I/O with reproducible notebooks"
+authors = [{name = "AliRezaei", email = "ali@example.com"}]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "opencv-python>=4.8",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-image>=0.21",
+    "typer>=0.9",
+    "rich>=13.0",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "jiwer>=3.0",
+    "pytesseract>=0.3.10",
+    "fastapi>=0.100", # Added for Dashboard API
+    "uvicorn>=0.20",  # Added for Dashboard API
+    "python-multipart"
+]
+
+[project.optional-dependencies]
+ocr = ["paddleocr>=2.7"]
+asr = ["openai-whisper>=20230918", "faster-whisper>=0.9"]
+
+[project.scripts]
+vademos = "vademos.cli:app"
