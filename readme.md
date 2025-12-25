@@ -86,9 +86,9 @@ flowchart LR
     P -->|metrics| M[Metrics/Logs]
 
     subgraph Pipeline
-      P1[Preproc: resize, denoise, CLAHE] --> P2[Detection (EAST/DB)]
+      P1[Preproc: resize, denoise, CLAHE] --> P2[Detection (EAST or DB)]
       P2 --> P3[OCR (Tesseract/Paddle)]
-      P1 -.-> P4[Color‑vision sim/daltonize]
+      P1 -.-> P4[Color-vision sim/daltonize]
       P1 -.-> P5[ASR/Subtitle]
     end
 ```
